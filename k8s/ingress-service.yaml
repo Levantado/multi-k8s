@@ -13,7 +13,6 @@ spec:
         - coin-chain.tk
         - www.coin-chain.tk
       secretName: coin-chain-tk
-
   rules:
     - host: coin-chain.tk
       http:
@@ -27,13 +26,13 @@ spec:
               serviceName: server-cluster-ip-service
               servicePort: 5000
     - host: www.coin-chain.tk
-        http:
-          paths:
-            - path: /?(.*)
-              backend:
-                serviceName: client-cluster-ip-service
-                servicePort: 3000
-            - path: /api/?(.*)
-              backend:
-                serviceName: server-cluster-ip-service
-                servicePort: 5000
+      http:
+        paths:
+          - path: /?(.*)
+            backend:
+              serviceName: client-cluster-ip-service
+              servicePort: 3000
+          - path: /api/?(.*)
+            backend:
+              serviceName: server-cluster-ip-service
+              servicePort: 5000
