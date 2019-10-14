@@ -21,7 +21,7 @@ scripts:
   - docker run -e CI=true levantado/react-test npm run test
 
 deploy:
-  provider: script
+  provider: scripts
   script: bash ./deploy.sh
   on:
     branch: master
