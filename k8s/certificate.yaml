@@ -1,0 +1,20 @@
+apiVersion: certificates.k8s.io/v1beta1
+kind: Certificate
+metadata:
+  name: coin-chain-tk-tls
+spec:
+  secretName: coin-chain-tk
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: coin-chain.tk
+  dnsName:
+    - coin-chain.tk
+    - www.coin-chain.tk
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - coin-chain-tk
+          - www.coin-chain-tk
