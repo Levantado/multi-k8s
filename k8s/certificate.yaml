@@ -16,5 +16,5 @@ spec:
       - http01:
           ingressClass: nginx
         domains:
-          - coin-chain-tk
-          - www.coin-chain-tk
+          - coin-chain.tk
+          - www.coin-chain.tk
