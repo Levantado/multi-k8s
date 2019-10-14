@@ -22,7 +22,7 @@ scripts:
   - docker run -e CI=true levantado/react-test npm run test -- --coverage
 
 deploy:
-  provider: scripts
+  provider: script
   script: bash ./deploy.sh
   on:
     branch: master
