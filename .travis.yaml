@@ -17,7 +17,7 @@ before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t levantado/react-test -f ./client/Dockerfile.dev ./client
 
-script:
+scripts:
   - docker run -e CI=true levantado/react-test npm run test
 
 deploy:
